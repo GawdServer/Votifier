@@ -27,7 +27,6 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.logging.*;
 import javax.crypto.BadPaddingException;
-import org.bukkit.Bukkit;
 
 import com.vexsoftware.votifier.Votifier;
 import com.vexsoftware.votifier.crypto.RSA;
@@ -175,13 +174,7 @@ public class VoteReceiver extends Thread {
 				// Call event in a synchronized fashion to ensure that the
 				// custom event runs in the
 				// the main server thread, not this one.
-				plugin.getServer().getScheduler()
-						.scheduleSyncDelayedTask(plugin, new Runnable() {
-							public void run() {
-								Bukkit.getServer().getPluginManager()
-										.callEvent(new VotifierEvent(vote));
-							}
-						});
+				new VotifierEvent(vote);
 
 				// Clean up.
 				writer.close();

@@ -1,7 +1,5 @@
 package com.vexsoftware.votifier.model;
 
-import org.bukkit.event.*;
-
 /**
  * {@code VotifierEvent} is a custom Bukkit event class that is sent
  * synchronously to CraftBukkit's main thread allowing other plugins to listener
@@ -10,12 +8,7 @@ import org.bukkit.event.*;
  * @author frelling
  * 
  */
-public class VotifierEvent extends Event {
-	/**
-	 * Event listener handler list.
-	 */
-	private static final HandlerList handlers = new HandlerList();
-
+public class VotifierEvent {
 	/**
 	 * Encapsulated vote record.
 	 */
@@ -40,12 +33,4 @@ public class VotifierEvent extends Event {
 		return vote;
 	}
 
-	@Override
-	public HandlerList getHandlers() {
-		return handlers;
-	}
-
-	public static HandlerList getHandlerList() {
-		return handlers;
-	}
 }

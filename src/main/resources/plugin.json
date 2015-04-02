@@ -1,0 +1,5 @@
+{
+  "name": "Votifier",
+  "version": "1.0",
+  "mainClass": "com.vexsoftware.votifier.Votifier"
+}
