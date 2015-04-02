@@ -9,21 +9,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>bukkit</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
-        </repository>
-    </repositories>
-    
     <dependencies>
-        <!-- Bukkit Dependency -->
+        <!-- Get GawdServer from ProjectDir -->
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.7.2-R0.1</version>
-            <type>jar</type>
-            <scope>compile</scope>
+            <groupId>tk.coolv1994</groupId>
+            <artifactId>gawdserver</artifactId>
+            <version>LATEST</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/GawdServer.jar</systemPath>
         </dependency>
     </dependencies>
 
@@ -59,7 +52,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <file>target/classes/plugin.yml</file>
+                    <file>target/classes/plugin.json</file>
                     <replacements>
                         <replacement>
                             <token>maven-version-number</token>
