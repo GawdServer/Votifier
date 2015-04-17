@@ -30,7 +30,7 @@ import com.vexsoftware.votifier.crypto.RSAKeygen;
 import com.vexsoftware.votifier.model.ListenerLoader;
 import com.vexsoftware.votifier.model.VoteListener;
 import com.vexsoftware.votifier.net.VoteReceiver;
-import tk.coolv1994.gawdserver.plugin.Plugin;
+import tk.coolv1994.gawdapi.plugin.Plugin;
 
 /**
  * The main Votifier plugin class.
