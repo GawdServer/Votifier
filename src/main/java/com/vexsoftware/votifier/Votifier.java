@@ -30,7 +30,8 @@ import com.vexsoftware.votifier.crypto.RSAKeygen;
 import com.vexsoftware.votifier.model.ListenerLoader;
 import com.vexsoftware.votifier.model.VoteListener;
 import com.vexsoftware.votifier.net.VoteReceiver;
-import tk.coolv1994.gawdapi.plugin.Plugin;
+import io.github.gawdserver.api.plugin.Plugin;
+import io.github.gawdserver.api.plugin.PluginDir;
 
 /**
  * The main Votifier plugin class.
@@ -43,9 +44,6 @@ public class Votifier implements Plugin {
 
 	/** The logger instance. */
 	private static final Logger LOG = Logger.getLogger("Votifier");
-
-	/** Log entry prefix */
-	private static final String logPrefix = "[Votifier] ";
 
 	/** The Votifier instance. */
 	private static Votifier instance;
@@ -66,14 +64,7 @@ public class Votifier implements Plugin {
 	private boolean debug;
 
     /** Directory */
-    private File dataFolder = new File("./plugins/Votifier");
-
-	/**
-	 * Attach custom log filter to logger.
-	 */
-	static {
-		LOG.setFilter(new LogFilter(logPrefix));
-	}
+    private File dataFolder;
 
     public Votifier() {
         instance = this;
@@ -83,6 +74,8 @@ public class Votifier implements Plugin {
 	public void startup() {
 		// Set the plugin version.
 		version = "1.9";
+
+		dataFolder = new File(PluginDir.getPluginDir(), "Votifier");
 
 		// Handle configuration.
 		if (!dataFolder.exists()) {
