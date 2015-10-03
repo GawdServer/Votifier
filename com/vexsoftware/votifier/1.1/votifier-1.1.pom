@@ -3,11 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vexsoftware</groupId>
     <artifactId>votifier</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>Votifier</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <github.global.server>github</github.global.server>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
     </properties>
 
     <repositories>
@@ -19,9 +21,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>tk.coolv1994</groupId>
-            <artifactId>gawdapi</artifactId>
-            <version>1.0.0</version>
+            <groupId>io.github.gawdserver</groupId>
+            <artifactId>api</artifactId>
+            <version>1.0.4</version>
         </dependency>
     </dependencies>
 
@@ -35,6 +37,7 @@
 
     <build>
         <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.name}_${project.version}</finalName>
         <plugins>
             <!-- Compiler -->
             <plugin>
@@ -104,6 +107,7 @@
                     <repositoryName>Votifier</repositoryName>
                     <!-- github username  -->
                     <repositoryOwner>GawdServer</repositoryOwner>
+                    <oauth2Token>6709ef7600f0b454486675a40844df9937ecf703</oauth2Token>
                 </configuration>
                 <executions>
                     <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
